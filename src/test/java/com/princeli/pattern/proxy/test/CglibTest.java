@@ -14,7 +14,7 @@ import net.sf.cglib.core.DebuggingClassWriter;
 public class CglibTest {
     public static void main(String[] args) {
         try {
-            System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"/Users/liyang/Desktop/cglib_proxy_classes");
+            System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"/Users/xxx/Desktop/cglib_proxy_classes");
 
             Customer obj = (Customer) new CGlibMeipo().getInstance(Customer.class);
             System.out.println(obj);
