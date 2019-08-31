@@ -1,10 +1,11 @@
 package com.princeli.pattern.proxy.dbroute.proxy;
 
 import com.princeli.pattern.proxy.dbroute.db.DynamicDataSourceEntity;
+import com.princeli.pattern.proxy.dynamicproxy.gpproxy.GPClassLoader;
+import com.princeli.pattern.proxy.dynamicproxy.gpproxy.GPInvocationHandler;
+import com.princeli.pattern.proxy.dynamicproxy.gpproxy.GPProxy;
 
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,7 +16,7 @@ import java.util.Date;
  * @date 2019-06-23 20:00
  * @description: TODO
  */
-public class OrderServiceDynamicProxy implements InvocationHandler {
+public class OrderServiceDynamicProxy implements GPInvocationHandler {
 
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
 
@@ -24,7 +25,7 @@ public class OrderServiceDynamicProxy implements InvocationHandler {
     public Object getInstance(Object proxyObj) {
         this.proxyObj = proxyObj;
         Class<?> clazz = proxyObj.getClass();
-        return Proxy.newProxyInstance(clazz.getClassLoader(),clazz.getInterfaces(),this);
+        return GPProxy.newProxyInstance(new GPClassLoader(),clazz.getInterfaces(),this);
     }
 
 

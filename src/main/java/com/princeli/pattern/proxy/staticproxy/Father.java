@@ -22,4 +22,9 @@ public class Father implements Person {
         this.person.findLove();
         System.out.println("双方父母同意，确立关系");
     }
+
+    @Override
+    public void findJob(){
+
+    }
 }

@@ -15,4 +15,9 @@ public class Son implements Person {
     public void findLove(){
         System.out.println("儿子要求");
     }
+
+    @Override
+    public void findJob(){
+
+    }
 }

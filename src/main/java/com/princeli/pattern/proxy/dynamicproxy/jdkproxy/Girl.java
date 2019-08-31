@@ -15,4 +15,9 @@ public class Girl implements Person {
         System.out.println("高富帅");
         System.out.println("身高189");
     }
+
+    @Override
+    public void findJob(){
+
+    }
 }
